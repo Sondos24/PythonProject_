@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+
+<head>
+    <title>List of Advertisements</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'ads/style.css' %}">
+</head>
+<body>
+   <div class="container">
+    <h1>Advertisements</h1>
+    <ul>
+        {% for ad in ads %}
+        <li>
+            <h3>{{ ad.title }}</h3>
+            <p>{{ ad.description }}</p>
+            <small>{{ ad.created_at }}</small>
+            <p><a href="{{ ad.link }}" target="_blank">Visit Advertisement</a> </p>
+        </li>
+        {% endfor %}
+    </ul>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p><a href="{% url 'add_advertisement' %}" class="button">Add New Advertisement</a></p>
+    </div>
+</body></html>

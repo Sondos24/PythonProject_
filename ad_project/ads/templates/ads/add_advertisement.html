@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head> 
+    <link rel="stylesheet" type="text/css" href="{% static 'ads/style.css' %}">
+    <title>Add Advertisement</title>  
+</head>
+<body>
+   <div class="container">
+        <h1>Add Advertisement</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="button">Submit</button>
+            <p></p>
+            <p></p>
+        </form>
+        <a href="{% url 'list_ads' %}" class="button">Back to Ads List</a>
+
+   </div> 
+</body>
+</html>
